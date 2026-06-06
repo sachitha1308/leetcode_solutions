@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class EmployeeMethod {
+    static public class Employee {
+        void CalculateSalary(int salary, int hours) {
+            System.out.println("salary");
+        }
+    }
+
+    static class Fulltimeemployee extends Employee {
+        @Override
+        void CalculateSalary(int salary, int hours) {
+
+            System.out.println("Full-Time Employee Salary =" + salary);
+        }
+    }
+
+    static class Parttimeemployee extends Employee {
+        @Override
+        void CalculateSalary(int salary, int hours) {
+
+            System.out.println("Part-Time Employee Salary =" + hours * salary);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("enter salary : ");
+        int salary = scan.nextInt();
+
+        System.out.print("enter hour : ");
+        int hour = scan.nextInt();
+
+        Employee emp;
+        emp = new Fulltimeemployee();
+        emp.CalculateSalary(salary, hour);
+
+        emp = new Parttimeemployee();
+        emp.CalculateSalary(salary, hour);
+    }
+}
