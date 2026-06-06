@@ -1,0 +1,41 @@
+public class PaymentMethod {
+    static class Payment {
+        void pay() {
+            System.out.println("Payment successfull");
+        }
+    }
+
+    static class Creditcardpayment extends Payment {
+        @Override
+        void pay() {
+            System.out.println("Payment made using credit card");
+        }
+    }
+
+    static class UPIPayment extends Payment {
+        @Override
+        void pay() {
+            System.out.println("Payment made using UPI");
+        }
+    }
+
+    static class NetBankingPyament extends Payment {
+        @Override
+        void pay() {
+            System.out.println("Payment using Net Banking");
+        }
+    }
+
+    public static void main(String[] args) {
+        Payment p;
+        p = new Creditcardpayment();
+        p.pay();
+
+        p = new UPIPayment();
+        p.pay();
+
+        p = new NetBankingPyament();
+        p.pay();
+    }
+
+}
